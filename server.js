@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 // const connectDB = require('./config/db');
 // const https = require("https");
-const path = require('path');
+// const path = require('path');
 // const fs = require('fs');
 
 const app = express();
@@ -279,20 +279,10 @@ app.use('/api/match-schedule', require('./routes/api/match-schedule'));
 // app.use('/api/live', require('./routes/api/match-schedule'));
 // app.use('/api/statistics', require('./routes/api/match-schedule'));
 
-// Serve static assets in production
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 
 
 
 
-
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 app.listen(PORT, '0.0.0.0', () => console.log(`Server started on port ${PORT}`));
