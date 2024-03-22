@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 // const connectDB = require('./config/db');
 // const https = require("https");
-// const path = require('path');
+const path = require('path');
 // const fs = require('fs');
 
 const app = express();
@@ -19,7 +19,7 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 app.use(express.static('static'));
-
+app.use(express.static(path.join(__dirname, 'static')));
 
 // async function downloadImage(url, destination) {
 //  try {
